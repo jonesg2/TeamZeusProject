@@ -15,7 +15,7 @@ DR2010 <- read.csv("D:/Project Zeus/Death Registrations/DR2010.csv")
 DR2011 <- read.csv("D:/Project Zeus/Death Registrations/DR2011.csv")
 DR2012 <- read.csv("D:/Project Zeus/Death Registrations/DR2012.csv")
 
-#Data currently saves as data set, need to create data frames from individual Year records
+#Data currently saved as data set, need to create data frames from individual Year records
 DFDR2001<-data.frame(DR2001)
 DFDR2002<-data.frame(DR2002)
 DFDR2003<-data.frame(DR2003)
