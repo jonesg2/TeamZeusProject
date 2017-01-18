@@ -1,0 +1,50 @@
+# Data preperation. Below code is what i used to get the dataset into R. The raw data is in an excel file whcih is split into 
+# tabs for each year. Before reading to R i saved each tab as an individual csv file for import.
+
+#Import data into r
+DR2001 <- read.csv("D:/Project Zeus/Death Registrations/DR2001.csv")
+DR2002 <- read.csv("D:/Project Zeus/Death Registrations/DR2002.csv")
+DR2003 <- read.csv("D:/Project Zeus/Death Registrations/DR2003.csv")
+DR2004 <- read.csv("D:/Project Zeus/Death Registrations/DR2004.csv")
+DR2005 <- read.csv("D:/Project Zeus/Death Registrations/DR2005.csv")
+DR2006 <- read.csv("D:/Project Zeus/Death Registrations/DR2006.csv")
+DR2007 <- read.csv("D:/Project Zeus/Death Registrations/DR2007.csv")
+DR2008 <- read.csv("D:/Project Zeus/Death Registrations/DR2008.csv")
+DR2009 <- read.csv("D:/Project Zeus/Death Registrations/DR2009.csv")
+DR2010 <- read.csv("D:/Project Zeus/Death Registrations/DR2010.csv")
+DR2011 <- read.csv("D:/Project Zeus/Death Registrations/DR2011.csv")
+DR2012 <- read.csv("D:/Project Zeus/Death Registrations/DR2012.csv")
+
+#Data currently saves as data set, need to create data frames from individual Year records
+DFDR2001<-data.frame(DR2001)
+DFDR2002<-data.frame(DR2002)
+DFDR2003<-data.frame(DR2003)
+DFDR2004<-data.frame(DR2004)
+DFDR2005<-data.frame(DR2005)
+DFDR2006<-data.frame(DR2006)
+DFDR2007<-data.frame(DR2007)
+DFDR2008<-data.frame(DR2008)
+DFDR2009<-data.frame(DR2009)
+DFDR2010<-data.frame(DR2010)
+DFDR2011<-data.frame(DR2011)
+DFDR2012<-data.frame(DR2012)
+
+#Merge the spereate years into 1 data set
+DFDR2001to2012<- rbind(DFDR2001, 
+                       DFDR2002, 
+                       DFDR2003, 
+                       DFDR2004, 
+                       DFDR2005, 
+                       DFDR2006, 
+                       DFDR2007, 
+                       DFDR2008, 
+                       DFDR2009, 
+                       DFDR2010, 
+                       DFDR2011, 
+                       DFDR2012
+                       )
+
+#DFDR2001to2012<- rbind(DFDR2001, DFDR2002) TEst merge
+
+#exporting data set to group.
+write.csv(DFDR2001to2012, file = "DR2001to2012.csv") # This is file is saved in the shared drive under data sources for use.
