@@ -5,7 +5,9 @@ DR2001to2012 <- read.csv("Z:/Team Zeus Project/Data Sources/DR2001to2012.csv")
 #create data frame
 DFDR2001to2012<-data.frame(DR2001to2012)
 
-#Subset the data set by ICD-10 codes relating to Lung Cancer
+#Data currently covers all causes of death but we want just data concerned with lung cancer which is ICD-10 codes c340 - c349 
+#To subset the data set i created individual sections for each ICD-10 code relating to Lung Cancer and then merge the results into one data frame.
+
 DR2001to2012.subC340 <- DFDR2001to2012[DFDR2001to2012$ICD.10 == "C340", ]
 DR2001to2012.subC341 <- DFDR2001to2012[DFDR2001to2012$ICD.10 == "C341", ]
 DR2001to2012.subC342 <- DFDR2001to2012[DFDR2001to2012$ICD.10 == "C342", ]
@@ -24,10 +26,15 @@ DR2001to2012.subClung <- rbind(DR2001to2012.subC340,
 #Backup copy before conversion
 DR2001to2012.subClung2<-DR2001to2012.subClung
 
+#Next step was to restrict the age ranges as we need ages less than 75 years old and current data contains information on deaths up to ages 85+.
+#Initial steps was to use the above method but the data type is currently a factor which will not subset.
+#The next step changes the data type to a character which will allow a subset.
+
 #normalise class of age to subset
+
 DR2001to2012.subClung$AGE <-as.character(DR2001to2012.subClung$AGE)
 
-#Removal of Age 75+ results
+#Removal of Age 75+ results by selecting a subset the data not including the unwanted ages ranges. i have repeated the code for the 3 ages ranges not wanted so the result will only include the ages wanted.
 DR2001to2012.subClung3<-DR2001to2012.subClung[DR2001to2012.subClung$AGE != "75-79", ]
 DR2001to2012.subClung3<-DR2001to2012.subClung3[DR2001to2012.subClung3$AGE != "80-84", ]
 DR2001to2012.subClung3<-DR2001to2012.subClung3[DR2001to2012.subClung3$AGE != "85+  ", ]
