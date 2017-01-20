@@ -1,5 +1,4 @@
-# Data preperation. Below code is what i used to get the dataset into R. The raw data is in an excel file whcih is split into 
-# tabs for each year. Before reading to R i saved each tab as an individual csv file for import.
+# Data preparation. Below code is what i used to get the dataset into R. The raw data is in an excel file which is split into tabs for each year. Before reading to R i saved each tab as an individual csv file for import.
 
 #Import data into r
 DR2001 <- read.csv("D:/Project Zeus/Death Registrations/DR2001.csv")
@@ -15,7 +14,9 @@ DR2010 <- read.csv("D:/Project Zeus/Death Registrations/DR2010.csv")
 DR2011 <- read.csv("D:/Project Zeus/Death Registrations/DR2011.csv")
 DR2012 <- read.csv("D:/Project Zeus/Death Registrations/DR2012.csv")
 
-#Data currently saved as data set, need to create data frames from individual Year records
+#the data shows in R as a data set so the next step converts the data into data frames
+#create data frames from individual Year records
+
 DFDR2001<-data.frame(DR2001)
 DFDR2002<-data.frame(DR2002)
 DFDR2003<-data.frame(DR2003)
@@ -29,7 +30,12 @@ DFDR2010<-data.frame(DR2010)
 DFDR2011<-data.frame(DR2011)
 DFDR2012<-data.frame(DR2012)
 
-#Merge the spereate years into 1 data set
+#Data is currently in individual data frames for each year but we need this as one data frame
+
+#DFDR2001to2012<- rbind(DFDR2001, DFDR2002) TEst merge (ignore)
+
+#Merging the separate years into 1 data set
+
 DFDR2001to2012<- rbind(DFDR2001, 
                        DFDR2002, 
                        DFDR2003, 
@@ -44,7 +50,7 @@ DFDR2001to2012<- rbind(DFDR2001,
                        DFDR2012
                        )
 
-#DFDR2001to2012<- rbind(DFDR2001, DFDR2002) TEst merge
-
+#The above is now 1 data frame so for sharing and use later write.csv used to export to local save.
 #exporting data set to group.
+
 write.csv(DFDR2001to2012, file = "DR2001to2012.csv") # This is file is saved in the shared drive under data sources for use.
