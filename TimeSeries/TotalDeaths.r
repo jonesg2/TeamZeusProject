@@ -26,6 +26,9 @@ df_Time
 df_Time_Order <- df_Time[order(df_Time$Date),]
 df_Time_Order
 
+## Time Series
+df_Time_series<-ts(df_Time_order$x)
+
 ## SEE IF YOU CAN GET THIS TO WORK ##
 library(ggplot2)
 ggplot(df_Time_Order, aes(Date, x)) + geom_line() 
