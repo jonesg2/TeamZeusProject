@@ -44,16 +44,11 @@ install.packages("forecast")
 library("forecast")
 library("ggplot2")
 
-##Forecast for next 192 months (Jan2015-Dec2030) - WE WILL NOT USE THIS GOING FORWARD IMPOSSIBLE TO FORECAST THAT FAR AHEAD 
+##Forecast for next 192 months (Jan2015-Dec2030) 
 LCDseriesforecasts2 <- forecast.HoltWinters(LCDseriesforecasts, h=192)
-##Plot forecast2 against original - WE WILL NOT USE THIS GOING FORWARD 
+##Plot forecast2 against original 
 plot(LCDseriesforecasts2,xlab="Time in Months", ylab="Number Of Deaths", main="Number of Lung Cancer Deaths Jan 2001-Dec 2030", col="blue")
 #Here the forecasts for Jan2015-Dec2030 are plotted as a blue line,
 #the 80% prediction interval as the inner shaded area, and the 95% prediction interval as the outer shaded area
-#This is only useful too show we CAN NOT predict for 2030 accurately
 
-##Forecast for next 24 months (Jan2015-Dec2016) & PLOT - ALEX
-LCDforecast24 <- forecast.HoltWinters(LCDseriesforecasts, h=24)
-LCDforecast24
-plot(LCDforecast24,xlab="Time in Months", ylab="Number Of Deaths", main="Number of Lung Cancer Deaths Jan 2001-Dec 2016", col="blue")
 
