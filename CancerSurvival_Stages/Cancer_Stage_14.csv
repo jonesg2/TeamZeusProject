@@ -1,0 +1,25 @@
+Cancer site,Sex,Stage 1,Stage 2,Stage 3,Stage 4
+Bladder,Male,95.3,70.7,66.6,35.3
+Bladder,Female,91.1,63.4,55.9,27.4
+,,,,,
+Breast,Female,100.1,98.8,94.9,63.2
+,,,,,
+Colorectal,Male,97.5,92.6,88.8,43.6
+Colorectal,Female,98.3,91.2,84.8,35.2
+,,,,,
+Kidney,Male,95.5,89.4,94.8,37.6
+Kidney,Female,94.0,91.3,89.2,34.4
+,,,,,
+Lung,Male,81.2,66.3,41.7,14.6
+Lung,Female,85.1,68.7,46.2,19.3
+,,,,,
+Melanoma,Male,100.5,96.7,91.7,47.2
+Melanoma,Female,100.5,98.4,96.1,54.2
+,,,,,
+Ovary,Female,98.7,93.5,71.0,51.4
+,,,,,
+Prostate,Male,100.6,100.5,100.3,84.8
+,,,,,
+Uterus,Female,99.0,94.3,83.1,45.3
+,,,,,
+,,,,,
