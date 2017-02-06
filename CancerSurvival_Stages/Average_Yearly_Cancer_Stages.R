@@ -4,9 +4,9 @@ library(reshape2)
 ## <----- Description of data source: Table of cancer survival rates of BOTH genders in 2014 ------>
 
 ## Import data for cancer stages ## 
-head(CSV_2014 <- read.csv("Cancer_Stage_14.csv")) ## 2014 Data
-head(CSV_2013 <- read.csv("Cancer_Stage_13.csv")) ## 2013 Data
-head(CSV_2012 <- read.csv("Cancer_Stage_12.csv")) ## 2012 Data
+head(CSV_2014 <- read.csv("Z:/Team Zeus Project/Stages/Cancer_Stage_14.csv")) ## 2014 Data
+head(CSV_2013 <- read.csv("Z:/Team Zeus Project/Stages/Cancer_Stage_13.csv")) ## 2013 Data
+head(CSV_2012 <- read.csv("Z:/Team Zeus Project/Stages/Cancer_Stage_12.csv")) ## 2012 Data
 
 ## Melt data frames & delete NA rows
 #2014
